@@ -136,3 +136,19 @@ Feature Requests
 About
 ============
 This is a project I worked on a few years ago, but shelved it as I wasn't happy with my append/pop item implementation. I have decided to ditch that support altogether and release as is for now to get a starting base. Some code had to be re-written/worked around due to newer versions of pymongo (original conitedb was developed on Ubuntu LTS 12.04!).
+
+Testing
+=========
+
+Automated testing is provided by http://travis-ci.org configured by the .travis.yml.
+The test runner is powered by py.test.
+Coverage is provided by http://coveralls.io
+
+Running the tests
+
+```
+  docker run -dP -p 27017:27017 mongo
+  pip install -r requirements.txt
+  pip install -r requirements-dev.txt
+  PYTHONPATH=. py.test -vv --cov-report term-missing --cov=.
+```
