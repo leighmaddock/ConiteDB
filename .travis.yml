@@ -1,0 +1,20 @@
+---
+language: python
+
+python:
+  - "2.7"
+  - "3.4"
+  - "3.5"
+
+services:
+  - mongodb
+
+install:
+  - pip install -r requirements.txt
+  - pip install -r requirements-dev.txt
+
+script:
+  - PYTHONPATH=. py.test -vv --cov-report term-missing --cov .
+
+after_success:
+    - coveralls
