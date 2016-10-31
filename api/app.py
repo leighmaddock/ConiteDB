@@ -2,7 +2,6 @@
 
 from flask import Flask, jsonify, request
 from ConiteDB import ConiteDB
-import copy
 
 app = Flask(__name__)
 
